@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 
 class authController extends Controller
 {
+    function index()
+    {
+        return view('auth.index');
+    }
+
     function redirect()
     {
         return Socialite::driver('google')->redirect();
@@ -19,6 +25,18 @@ class authController extends Controller
         $email = $user->email;
         $name = $user->name;
 
-        return "$id - $email - $name";
+        $cek = User::where('email', $email)->count();
+        if($cek > 0){
+            $user = User::updateOrCreate(
+                ['email' => $email],
+                [
+                    'name' => $name,
+                    'google_id' => $id
+                ]
+            );
+            return redirect()->to('dashboard');
+        } else {
+            return redirect()->to('auth')->with('error', 'Akun yang anda gunakan tidak diizinkan untuk masuk halaman admin');
+        }
     }
 }
