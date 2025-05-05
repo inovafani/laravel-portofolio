@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\halaman;
 use Illuminate\Http\Request;
 
 class halamanController extends Controller
@@ -34,7 +35,22 @@ class halamanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'judul'=> 'required',
+                'isi'=> 'required',
+            ],
+            [
+                'judul.required'=> 'Judul wajib diisi',
+                'isi.required'=> 'Isian tulisan wajib diisi',
+            ]
+            );
+        
+            $data = [
+                'judul'=>$request->judul,
+                'isi'=>$request->isi,
+            ];
+            halaman::create();
     }
 
     /**
