@@ -23,7 +23,7 @@ class halamanController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.halaman.create');
     }
 
     /**
