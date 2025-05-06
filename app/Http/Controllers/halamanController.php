@@ -119,6 +119,7 @@ class halamanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        halaman::where('id', $id)->delete();
+        return redirect()->route('halaman.index')->with('success', 'Berhasil menghapus data');
     }
 }

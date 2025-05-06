@@ -21,7 +21,11 @@
       <td>{{ $item->judul }}</td>
       <td>
         <a href="{{route('halaman.edit', $item->id)}}" class="btn btn-sm btn-warning">Edit</a>
-        <a href="" class="btn btn-sm btn-danger">Delete</a>
+        <form onsubmit="return confirm('Yakin untuk hapus data?')" action="{{route('halaman.destroy', $item->id)}}" class="d-inline" method="POST">
+          @csrf
+          @method('DELETE')
+          <button class="btn btn-sm btn-danger" type="submit" name="submit">Delete</button>
+        </form>
       </td>
     </tr>
     <?php $i++ ?>
