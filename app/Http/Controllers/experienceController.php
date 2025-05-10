@@ -42,18 +42,19 @@ class experienceController extends Controller
         Session::flash('tgl_mulai', $request->tgl_mulai);
         Session::flash('tgl_akhir', $request->tgl_akhir);
         Session::flash('isi', $request->isi);
+
         $request->validate(
             [
                 'judul'=> 'required',
                 'isi'=> 'required',
                 'info1'=> 'required',
-                'tgl_mulai'=> 'required',
+                'tgl_mulai' => 'required',
             ],
             [
                 'judul.required'=> 'Judul wajib diisi',
-                'isi.required'=> 'Isian tulisan wajib diisi',
                 'info1.required'=> 'Nama perusahaan wajib diisi',
                 'tgl_mulai.required'=> 'Tanggal mulai wajib diisi',
+                'isi.required'=> 'Isian tulisan wajib diisi',
             ]
             );
         
