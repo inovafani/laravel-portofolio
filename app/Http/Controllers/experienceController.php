@@ -13,7 +13,8 @@ class experienceController extends Controller
      */
     public function index()
     {
-        //
+        $data = [];
+        return view('dashboard.experience.index')->with('data', $data);
     }
 
     /**
@@ -23,7 +24,7 @@ class experienceController extends Controller
      */
     public function create()
     {
-        //
+         return view('dashboard.experience.create');
     }
 
     /**
