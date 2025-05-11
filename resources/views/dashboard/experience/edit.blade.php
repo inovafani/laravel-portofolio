@@ -42,7 +42,7 @@
         </div>
         <div class="mb-3">
             <label for="isi" class="form-label">Isi</label>
-            <textarea class="form-control summernote" id="isi" name="isi" rows="5" value="{{$data->isi}}"></textarea>
+            <textarea class="form-control summernote" id="isi" name="isi" rows="5">{{$data->isi}}</textarea>
         </div>
         <button class="btn btn-primary" name="simpan" type="submit">Simpan</button>
         
