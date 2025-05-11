@@ -26,8 +26,8 @@
       <td>{{ $item->tgl_mulai_indo }}</td>
       <td>{{ $item->tgl_akhir_indo }}</td>
       <td>
-        <a href="{{route('halaman.edit', $item->id)}}" class="btn btn-sm btn-warning">Edit</a>
-        <form onsubmit="return confirm('Yakin untuk hapus data?')" action="{{route('halaman.destroy', $item->id)}}" class="d-inline" method="POST">
+        <a href="{{route('experience.edit', $item->id)}}" class="btn btn-sm btn-warning">Edit</a>
+        <form onsubmit="return confirm('Yakin untuk hapus data?')" action="{{route('experience.destroy', $item->id)}}" class="d-inline" method="POST">
           @csrf
           @method('DELETE')
           <button class="btn btn-sm btn-danger" type="submit" name="submit">Delete</button>

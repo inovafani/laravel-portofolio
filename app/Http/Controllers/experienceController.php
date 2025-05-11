@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 class experienceController extends Controller
 {
     protected $_tipe;
-    
+
     function __construct()
     {
         $this->_tipe = 'experience';
@@ -96,7 +96,8 @@ class experienceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = riwayat::where('id', $id)->where('tipe', $this->_tipe)->first();
+        return view('dashboard.experience.edit')->with('data', $data);
     }
 
     /**
