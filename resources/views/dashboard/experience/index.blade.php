@@ -23,8 +23,8 @@
       <td>{{ $i }}</td>
       <td>{{ $item->judul }}</td>
       <td>{{ $item->info1 }}</td>
-      <td>{{ $item->tgl_mulai }}</td>
-      <td>{{ $item->tgl_akhir }}</td>
+      <td>{{ $item->tgl_mulai_indo }}</td>
+      <td>{{ $item->tgl_akhir_indo }}</td>
       <td>
         <a href="{{route('halaman.edit', $item->id)}}" class="btn btn-sm btn-warning">Edit</a>
         <form onsubmit="return confirm('Yakin untuk hapus data?')" action="{{route('halaman.destroy', $item->id)}}" class="d-inline" method="POST">
