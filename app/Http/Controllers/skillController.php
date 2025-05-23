@@ -24,7 +24,10 @@ class skillController extends Controller
                 '_workflow.required' => 'Silahkan masukkan workflow yang kamu kuasai',
             ]);
 
-            metadata::updateOrCreate(['meta_key']);
+            metadata::updateOrCreate(['meta_key' => '_language'], ['meta_value' => $request->_language]);
+            metadata::updateOrCreate(['meta_key' => '_workflow'], ['meta_value' => $request->_workflow]);
+
+            return redirect()->route('skill.index')->with('success', 'Berhasil melakukan update data skill!');
         }
     }
 }

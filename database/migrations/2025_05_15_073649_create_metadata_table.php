@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('metadata', function (Blueprint $table) {
             $table->id();
-            $table->string('metakey');
+            $table->string('meta_key');
             $table->text('meta_value')->nullable();
             $table->timestamps();
         });
