@@ -1,25 +1,21 @@
 @extends('dashboard.layout')
 @section('konten')
-    <div class="pb-3">
-        <a href="{{route('halaman.index')}}" class="btn btn-secondary">
-            Kembali
-        </a>
-    </div>
-    <form action="{{route('halaman.store')}}" method="POST">
+
+    <form action="{{route('skill.update')}}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="judul" class="form-label">Judul</label>
+            <label for="judul" class="form-label">PROGRAMMING LANGUAGE & TOOLS</label>
             <input
                 type="text"
                 class="form-control form-control-sm"
-                name="judul"
+                name="_language"
                 id="judul"
-                aria-describedby="helpId" value="{{Session::get('judul')}}"
+                aria-describedby="helpId"
             />
         </div>
         <div class="mb-3">
-            <label for="isi" class="form-label">Isi</label>
-            <textarea class="form-control summernote" id="isi" name="isi" rows="5" value="{{Session::get('isi')}}"></textarea>
+            <label for="isi" class="form-label">WORKFLOW</label>
+            <textarea class="form-control summernote" id="isi" name="_workflow" rows="5" value="{{Session::get('isi')}}"></textarea>
         </div>
         <button class="btn btn-primary" name="simpan" type="submit">Simpan</button>
         
