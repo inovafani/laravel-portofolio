@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
-use App\Http\Controllers\experienceController;
-use App\Http\Controllers\halamanController;
-use App\Http\Controllers\skillController;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\skillController;
+use App\Http\Controllers\halamanController;
+use App\Http\Controllers\profileController;
+use App\Http\Controllers\experienceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,7 @@ Route::prefix('dashboard')->middleware('auth')->group(
         Route::resource('experience', experienceController::class);
         Route::get('skill',[skillController::class, "index"])->name('skill.index');
         Route::post('skill',[skillController::class, "update"])->name('skill.update');
+         Route::get('profile',[profileController::class, "index"])->name('profile.index');
+        Route::post('profile',[profileController::class, "update"])->name('profile.update');
     }
 );
