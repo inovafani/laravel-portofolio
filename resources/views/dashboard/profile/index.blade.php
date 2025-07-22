@@ -1,38 +1,43 @@
 @extends('dashboard.layout')
 @section('konten')
-    <form action="{{route('skill.update')}}" method="POST">
-
+    <form action="{{route('profile.update')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="mb-3">
-            <label for="judul" class="form-label">PROGRAMMING LANGUAGE & TOOLS</label>
-            <input
-                type="text"
-                class="form-control form-control-sm skill"
-                name="_language"
-                id="judul"
-                aria-describedby="helpId"
-                value="{{get_meta_value('_language')}}"
-            />
+        <div class="row justify-content-between">
+            <div class="col-5">
+                <h3>Profile</h3>
+                <div class="mb-3">
+                    <label for="_foto" class="form-label">Foto</label>
+                    <input type="file" class="form-control form-control-sm" name="_foto" id="_foto">
+                </div>
+                <div class="mb-3">
+                    <label for="_kota" class="form-label">Kota</label>
+                    <input type="text" class="form-control form-control-sm" name="_kota" id="_kota">
+                </div>
+                <div class="mb-3">
+                    <label for="_provinsi" class="form-label">Provinsi</label>
+                    <input type="text" class="form-control form-control-sm" name="_provinsi" id="_provinsi">
+                </div>
+                <div class="mb-3">
+                    <label for="_nohp" class="form-label">No HP</label>
+                    <input type="text" class="form-control form-control-sm" name="_nohp" id="_nohp">
+                </div>
+                <div class="mb-3">
+                    <label for="_email" class="form-label">Email</label>
+                    <input type="text" class="form-control form-control-sm" name="_email" id="_email">
+                </div>
+            </div>
+            <div class="col-5">
+                <h3>Akun Media Sosial</h3>
+                <div class="mb-3">
+                    <label for="_email" class="form-label">Email</label>
+                    <input type="text" class="form-control form-control-sm" name="_email" id="_email">
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="isi" class="form-label">WORKFLOW</label>
-            <textarea class="form-control summernote" id="isi" name="_workflow" rows="5">{{get_meta_value('_workflow')}}</textarea>
-        </div>
+        
         <button class="btn btn-primary" name="simpan" type="submit">Update</button>
         
     </form>
 @endsection
 
-@push('child-script')
-    <script>
-    $(document).ready(function() {
-        $('.skill').tokenfield({
-            autocomplete: {
-                source: [{!! $skill !!}],
-                delay: 100
-            },
-            showAutocompleteOnFocus: true
-        });
-    });
-  </script> 
-@endpush
+
