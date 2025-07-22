@@ -18,7 +18,7 @@
                     <input type="text" class="form-control form-control-sm" name="_provinsi" id="_provinsi">
                 </div>
                 <div class="mb-3">
-                    <label for="_nohp" class="form-label">No HP</label>
+                    <label for="_nohp" class="form-label">No HP Update</label>
                     <input type="text" class="form-control form-control-sm" name="_nohp" id="_nohp">
                 </div>
                 <div class="mb-3">
